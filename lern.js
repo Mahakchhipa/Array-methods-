@@ -45,7 +45,7 @@ let fal = ["Apple", "Orange", "Kiwi", "Banana", "Date"];
 fal.forEach((fal) => console.log(fal));
 // yeh ek lamda function h jo without crulybraces use likha use kra jata h\
 
-const patients = ["7742831076", "9468792150", "9785301012", "9252605875"];
+const patients = ["7742831786", "9468752150", "9785301012", "9632605875"];
 patients.forEach((number) => console.log(`sending the msg ${number}`));
 
 const remainders = [
@@ -86,6 +86,34 @@ const entries = [
   { name: "sita", late: true },
 ];
 
-entries.forEach((data)=>{if(!data.late){
+entries.forEach((data) => {
+  if (!data.late) {
     console.log(data.name + " your fees is pening");
-}});
+  }
+});
+
+const bills = [1000, 1500, 2000];
+const billsWithGST = bills.map((bill) => bill * 1.18);
+console.log(billsWithGST);
+
+const employees = ["raj", "neha", "amit"];
+const capitalized = employees.map(
+  (name) => name.charAt(0).toUpperCase() + name.slice(1)
+);
+console.log(capitalized);
+
+const doctors = ["Singh", "Verma", "Chatterjee"];
+const fullNames = doctors.map((name) => `Dr. ${name}`);
+console.log(fullNames);
+
+const testResults = [85, 120, 140];
+const formattedResults = testResults.map((val) => `${val} mg/dL`);
+console.log(formattedResults);
+
+const employee = ["mahak", "saksham", "malika", "saham"];
+let newempolyee = employee.map(
+  (empo) => empo.charAt(0).toUpperCase() + empo.slice(1)
+);
+console.log(newempolyee);
+
+
