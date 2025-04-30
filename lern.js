@@ -120,7 +120,7 @@ const times = ["09:00", "13:00", "18:30", "5:00", "17:45", "16:55", "6:02"];
 let newtime = times.map((t) => {
   h = parseInt(t.slice(0, 2));
   m = t.slice(3);
-  const suffix = h >= 12 ? "PM" :"AM" ;
+  const suffix = h >= 12 ? "PM" : "AM";
   if (h > 12) {
     h = h % 12;
   }
@@ -129,22 +129,64 @@ let newtime = times.map((t) => {
 
 console.log(newtime);
 
-const patients1 = [25, 60, 45]; 
-const patientAges = patients1.map(age => `patient: ${age} is yrs`); 
+const patients1 = [25, 60, 45];
+const patientAges = patients1.map((age) => `patient: ${age} is yrs`);
 
-console.log(patientAges)
+console.log(patientAges);
 
-const staff = ['Nurse A', 'Nurse B']; 
-const attendance = staff.map(name => ({ name, present: true })); 
-  console.log(attendance);
+const staff = ["Nurse A", "Nurse B"];
+const attendance = staff.map((name) => ({ name, present: true }));
+console.log(attendance);
 
+const key = "city";
 
-  const key = "city";
+const obj = {
+  names: "mahak",
+  age: 21,
+  [key]: "jaipur",
+};
 
-  const obj ={
-    names :"mahak",
-    age:21,
-     [key]:"jaipur"
-  }
+console.log(obj);
 
-  console.log(obj)
+const obj5 = {
+  [{ obj1: "hi" }]: "value",
+};
+
+console.log(obj5);
+
+const patid = [125, 5504, 7896, 452, 76952, 3684];
+const newpetid = patid.map((id) => `http://goole.com/${id}`);
+
+console.log(newpetid);
+
+const names = ["Ravi Kumar", "Nidhi Das"];
+const emails = names.map(
+  (name) => name.toLowerCase().replace(" ", ".") + "@hospital.com"
+);
+
+console.log(emails);
+
+const slots = ["10:00", "14:00"];
+const typedSlots = slots.map((time) => ({
+  time,
+  type: "General Consultation",
+}));
+console.log(typedSlots);
+
+const addhar = [
+  "123456789024",
+  "123456586227",
+  "698556789069",
+  "365256789070",
+  "469856789155",
+];
+//
+// const mainadhar = addhar.map((newno) =>
+//   newno.replace(newno.slice(0, 9), "**** **** ")
+// );
+// console.log(mainadhar); this is first logic for do this quwtuon
+
+const mainadhar = addhar.map((newno) => "**** **** " + newno.slice(-4));
+console.log(mainadhar);
+
+// this is second logic fo do this quwetion
