@@ -116,4 +116,35 @@ let newempolyee = employee.map(
 );
 console.log(newempolyee);
 
+const times = ["09:00", "13:00", "18:30", "5:00", "17:45", "16:55", "6:02"];
+let newtime = times.map((t) => {
+  h = parseInt(t.slice(0, 2));
+  m = t.slice(3);
+  const suffix = h >= 12 ? "PM" :"AM" ;
+  if (h > 12) {
+    h = h % 12;
+  }
+  return `${h}:${m} ${suffix}`;
+});
 
+console.log(newtime);
+
+const patients1 = [25, 60, 45]; 
+const patientAges = patients1.map(age => `patient: ${age} is yrs`); 
+
+console.log(patientAges)
+
+const staff = ['Nurse A', 'Nurse B']; 
+const attendance = staff.map(name => ({ name, present: true })); 
+  console.log(attendance);
+
+
+  const key = "city";
+
+  const obj ={
+    names :"mahak",
+    age:21,
+     [key]:"jaipur"
+  }
+
+  console.log(obj)
