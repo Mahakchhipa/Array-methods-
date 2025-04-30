@@ -190,3 +190,45 @@ const mainadhar = addhar.map((newno) => "**** **** " + newno.slice(-4));
 console.log(mainadhar);
 
 // this is second logic fo do this quwetion
+
+const testNames = ["Glucose", "Hemoglobin"];
+const testCodes = testNames.map((name) => `${name} [TST-${name.length * 10}]`);
+console.log(testCodes);
+
+const coordinates = [
+  { lat: 26.91, lng: 75.78 },
+  { lat: 26.85, lng: 75.8 },
+];
+const mapLinks = coordinates.map(
+  (coord) => `https://maps.google.com/?q=${coord.lat},${coord.lng}`
+);
+console.log(mapLinks);
+
+const patientNames = ["Sita", "Ram", "Lakshman"];
+const tokens = patientNames.map((name, index) => ({ name, token: index + 1 }));
+
+console.log(tokens);
+
+const dobs = [2000, 1995, 2023, 2002, 2005, 1978, 2009, 1968];
+const newdob = new Date().getFullYear();
+console.log(newdob);
+const age = dobs.map((date) => newdob - date);
+console.log(age);
+
+const vehicles = ["Amb1", "Amb2"];
+const plates = vehicles.map((v, i) => `${v} [RJ-14-${1004 + i}]`);
+console.log(plates);
+
+// const phones = ['9876543210', '9123456789'];
+// const masked = phones.map(ph => `${ph.slice(0, 3)}****${ph.slice(-2)}`);
+// console.log(masked);
+
+// this 1st methed for do this quetion
+
+const phones = ["9876543210", "9123456789", "7852456789", "698556789"];
+const masked = phones.map((ph) => ph.replace(ph.slice(2, 7), "*****"));
+console.log(masked);
+
+// this is 2nd way to do this quetions
+
+
