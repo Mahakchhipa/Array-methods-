@@ -231,4 +231,20 @@ console.log(masked);
 
 // this is 2nd way to do this quetions
 
+const patientsnew = [
+  { name: "Ravi", admitted: true },
+  { name: "Ruhi", admitted: false },
+  { name: "Sita", admitted: false },
+  { name: "Sanjay", admitted: true },
+  { name: "Radha", admitted: true },
+  { name: "Mahi", admitted: false },
+  { name: "Sivansh", admitted: true },
+];
 
+// const admited = patientsnew.filter((mariz) => mariz.admitted);
+// console.log(admited);
+
+const admited = patientsnew.filter((mariz) => !mariz.admitted);
+console.log(admited);
+
+// for false conditions
