@@ -266,7 +266,7 @@ console.log(activeempo);
 const appointments = [{ time: "2025-05-08" }, { time: "2025-05-15" }];
 const upcoming = appointments.filter((a) => new Date(a.time) > new Date());
 // console.log(upcoming);
-// subscription loggic quetions 
+// subscription loggic quetions
 
 const usersdate = [
   { name: "Ravi", expiryDate: "2025-05-08" },
@@ -288,9 +288,39 @@ const remainerthree = 3;
 
 const usereemainder = usersdate.filter((u) => {
   const exp = new Date(u.expiryDate);
-  exp.setHours(0,0,0,0)
+  exp.setHours(0, 0, 0, 0);
   const diffrent = exp - today;
   const remain = diffrent / (1000 * 60 * 60 * 24);
   return remain <= remainerthree && remain >= 0;
 });
- console.log(usereemainder);
+console.log(usereemainder);
+
+// intersection type quetions
+const candidateA = ["JavaScript", "Python", "React", "c++"];
+const candidateB = ["Python", "Java", "React", "c++"];
+const commenskill = candidateA.filter((skill) => candidateB.includes(skill));
+console.log(commenskill);
+
+const studentA = ["Math", "Physics", "java", "Biology"];
+const studentB = ["Physics", "php", "c++", "Chemistry"];
+
+// const uncommen =  [...studentA.filter(sub => !studentB.includes(sub)), ...studentB.filter(sub => !studentA.includes(sub))];
+// console.log(uncommen)
+
+// 1way to do this quetion
+
+// 2nd way to do this same quetion
+
+const A = studentA.filter((s) => !studentB.includes(s));
+const B = studentB.filter((s) => !studentA.includes(s));
+
+const C = [...A, ...B];
+console.log(C);
+
+const faculty1 = ["AI", "ML", "DSA"];
+const faculty2 = ["ML", "Cloud"];
+const uniqueCourses = [
+  ...faculty1.filter((c) => !faculty2.includes(c)),
+  ...faculty2.filter((c) => !faculty1.includes(c)),
+];
+console.log(uniqueCourses);
