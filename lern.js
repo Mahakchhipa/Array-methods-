@@ -248,3 +248,49 @@ const admited = patientsnew.filter((mariz) => !mariz.admitted);
 console.log(admited);
 
 // for false conditions
+
+const employeesnew = [
+  { name: "Amit", status: "active" },
+
+  { name: "Neha", status: "inactive" },
+  { name: "Riya", status: "active" },
+  { name: "Zoya", status: "active" },
+  { name: "Ray", status: "active" },
+  { name: "Muskan", status: "inactive" },
+  { name: "Hansh", status: "active" },
+];
+
+const activeempo = employeesnew.filter((active) => active.status === "active");
+console.log(activeempo);
+
+const appointments = [{ time: "2025-05-08" }, { time: "2025-05-15" }];
+const upcoming = appointments.filter((a) => new Date(a.time) > new Date());
+// console.log(upcoming);
+// subscription loggic quetions 
+
+const usersdate = [
+  { name: "Ravi", expiryDate: "2025-05-08" },
+
+  { name: "Megha", expiryDate: "2025-05-11" },
+  { name: "Shyam", expiryDate: "2025-05-09" },
+  { name: "Kunal", expiryDate: "2025-05-12" },
+  { name: "Radha", expiryDate: "2025-05-15" },
+];
+const today = new Date();
+today.setHours(0, 0, 0, 0); // Normalize time
+
+// console.log(today);
+
+const remainerthree = 3;
+
+// const exp = new Date( "2025-05-25" );
+// console.log(exp)
+
+const usereemainder = usersdate.filter((u) => {
+  const exp = new Date(u.expiryDate);
+  exp.setHours(0,0,0,0)
+  const diffrent = exp - today;
+  const remain = diffrent / (1000 * 60 * 60 * 24);
+  return remain <= remainerthree && remain >= 0;
+});
+ console.log(usereemainder);
