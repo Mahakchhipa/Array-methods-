@@ -324,3 +324,79 @@ const uniqueCourses = [
   ...faculty2.filter((c) => !faculty1.includes(c)),
 ];
 console.log(uniqueCourses);
+
+const patient = [
+  { name: "Ravi", critical: true },
+
+  { name: "Neha", critical: false },
+];
+const isCritical = patient.some((p) => p.critical);
+console.log(isCritical);
+
+const negativeWords = [
+  "bad",
+  "poor",
+  "worst",
+  "angry",
+  "disappointed",
+  "horrible",
+  "fail",
+];
+
+const feedbacks = [
+  {
+    id: 1,
+    user: "Ravi",
+    feedback: "This is the poor product I have ever used.",
+  },
+
+  { id: 2, user: "Meera", feedback: "Amazing service, I loved it!" },
+
+  {
+    id: 3,
+    user: "Amit",
+    feedback: "I am so disappointed with the delivery time.",
+  },
+
+  {
+    id: 4,
+    user: "Priya",
+    feedback: "The product is fantastic, I am happy with it.",
+  },
+
+  {
+    id: 5,
+    user: "Suman",
+    feedback: "The worst experience, I would not recommend it.",
+  },
+];
+
+const nagativefeebacks = feedbacks.filter((feedback) =>
+  negativeWords.some((word) =>
+    feedback.feedback.toLowerCase().includes(word)
+  )
+);
+console.log(nagativefeebacks); 
+
+const courses = [{ students: 90, limit: 100 }, { students: 120, limit: 100 }]; 
+const overfilled = courses.some(c => c.students > c.limit); 
+  console.log(overfilled)
+  const values = [10,3, 45, 23, 89]; 
+const min = values.reduce((acc, val) => val < acc ? val : acc); 
+console.log(min)
+
+const numbers = [1, 2, 3, 4, 5]; 
+const evenSum = numbers.reduce((acc, n) => n % 2 === 0 ? acc + n : acc, 0); 
+console.log(evenSum ,"this is even")
+
+const employees1 = [ 
+  { name: "Rita", dept: "HR" }, 
+  { name: "Amit", dept: "IT" }, 
+  { name: "Sara", dept: "HR" } 
+]; 
+const grouped = employees1.reduce((acc, emp) => { 
+  acc[emp.dept] = (acc[emp.dept] || []).concat(emp); 
+  return acc; 
+}, {}); 
+
+console.log(grouped)
