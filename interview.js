@@ -41,6 +41,25 @@ const inventory = [
 
 const cate = inventory.reduce((acc, num) => {
   acc[num.category] = [...(acc[num.category] || []), num.name];
-  return acc
-},{});
-console.log(cate)
+  return acc;
+}, {});
+console.log(cate);
+
+const stockList = [
+  { id: 1, name: "Shoes", inStock: true },
+  { id: 2, name: "Jeans", inStock: false },
+  { id: 3, name: "Jacket", inStock: false },
+  { id: 4, name: "Shirt", inStock: true },
+  { id: 5, name: "paint", inStock: false },
+  { id: 6, name: "sockes", inStock: true },
+  { id: 7, name: "suit", inStock: true },
+  { id: 8, name: "duppata", inStock: true },
+  { id: 9, name: "Jacket", inStock: false },
+  { id: 10, name: "Jacket", inStock: false },
+];
+
+const outproduct = stockList.reduce(
+  (acc, stock) => (!stock.inStock ? acc + 1 : acc),
+  0
+);
+console.log(outproduct);
