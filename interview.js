@@ -63,3 +63,10 @@ const outproduct = stockList.reduce(
   0
 );
 console.log(outproduct);
+
+const subscriptions = [
+  { plan: "Pro", revenue: 999 },
+  { plan: "Basic", revenue: 499 },
+];
+const totalRevenue = subscriptions.reduce((sum, s) => sum + s.revenue, 0);
+console.log(totalRevenue);
