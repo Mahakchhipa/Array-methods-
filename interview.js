@@ -70,3 +70,28 @@ const subscriptions = [
 ];
 const totalRevenue = subscriptions.reduce((sum, s) => sum + s.revenue, 0);
 console.log(totalRevenue);
+
+// 7. Count the number of products per price range.
+const shopItems = [
+  { name: "USB Cable", price: 200 },
+  { name: "Bluetooth Speaker", price: 1200 },
+  { name: "Monitor", price: 9500 },
+  { name: "Gaming Chair", price: 15000 },
+  { name: "Monitor", price: 9500 },
+  { name: "Gaming remote", price: 6000 },
+  { name: "Monitor cpu", price: 9500 },
+  { name: "Gaming Chair", price: 7800 },
+  { name: "Laptop", price: 60000 },
+];
+
+const stockrange = shopItems.reduce((acc, items) => {
+  let range;
+  if (items.price <= 500) range = " under 500 price ";
+  else if (items.price >= 500 && items.price <= 1000)
+    range = " price under 1000";
+  else range = "1000 above the range ";
+  acc[range] = (acc[range] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(stockrange);
