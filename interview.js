@@ -95,3 +95,41 @@ const stockrange = shopItems.reduce((acc, items) => {
 }, {});
 
 console.log(stockrange);
+
+const productCatalog = [
+  { name: "iPhone", brand: "Apple" },
+  { name: "MacBook", brand: "Apple" },
+  { name: "Galaxy S21", brand: "Samsung" },
+  { name: "Galaxy Tab", brand: "Samsung" },
+  { name: "Pixel", brand: "Google" },
+  { name: "Tab", brand: "Samsung" },
+  { name: "Pixel phone 15", brand: "Google" },
+];
+
+const shopItems1 = [
+  { name: "USB Cable", price: 200 },
+  { name: "Bluetooth Speaker", price: 1200 },
+  { name: "Keyboard", price: 700 },
+  { name: "Monitor", price: 9500 },
+  { name: "Gaming Chair", price: 15000 },
+  { name: "Laptop", price: 60000 },
+  { name: "Phone", price: 1200 },
+  { name: "Tablet", price: 1500 },
+  { name: "Laptop", price: 2500 },
+  { name: "Shampoo", price: 50 },
+  { name: "Toothpaste", price: 300 },
+  { name: "Sofa", price: 10000 },
+  { name: "Dining Table", price: 19000 },
+  { name: "Fan", price: 800 },
+];
+const itemsrange = shopItems1.reduce((acc, items) => {
+  let range;
+  if (items.price < 500) range = "Under 500";
+  else if (items.price >= 500 && items.price < 1000) range = "500-1000";
+  else if (items.price >= 1000 && items.price < 5000) range = "1000-5000";
+  else if (items.price >= 5000 && items.price < 10000) range = "5000-10000";
+  else range = "10,000 and above";
+  acc[range] = [...(acc[range] || []), items.name];
+  return acc;
+}, {});
+console.log(itemsrange);
