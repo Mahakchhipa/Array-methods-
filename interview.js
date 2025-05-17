@@ -170,4 +170,33 @@ const treat = appointments.reduce((acc, appoint) => {
   acc[appoint.doctor] = [...(acc[appoint.doctor] || []), appoint.patient];
   return acc;
 }, {});
-console.log(treat)
+console.log(treat);
+
+// short metheds uses
+// decending odr formate short data
+const employees = [
+  { name: "Amit", salary: 40000 },
+  { name: "Neha", salary: 60000 },
+  { name: "Amn", salary: 86000 },
+  { name: " priti", salary: 60800 },
+  { name: "Amitjaya", salary: 7900 },
+  { name: "Neha2", salary: 60780 },
+];
+
+// const shortempo = employees.sort((empo1, empo2)=> empo2.salary - empo1.salary);
+// console.log(shortempo)
+// acending odrs formate short the data
+const shortempo = employees.sort((empo1, empo2) => empo1.salary - empo2.salary);
+console.log(shortempo);
+
+const slots = ["14:30", "09:00", "12:15"]; 
+slots.sort((a, b) => a.localeCompare(b)); 
+  
+
+const medicines = [ 
+  { name: "Paracetamol", expiry: "2025-04-01" }, 
+  { name: "Amoxicillin", expiry: "2024-12-01" } 
+]; 
+
+const exp = medicines.sort((expdate1,expdate2)=> new Date(expdate2.expiry)-new Date (expdate1.expiry))
+console.log(exp)
