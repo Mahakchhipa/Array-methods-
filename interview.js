@@ -133,3 +133,41 @@ const itemsrange = shopItems1.reduce((acc, items) => {
   return acc;
 }, {});
 console.log(itemsrange);
+
+const listing = [
+  { name: "Washing Machine" },
+  { name: "Refrigerator" },
+  { name: "Oven" },
+  { name: "Dishwasher" },
+];
+
+const string = listing.map((list) => list.name).join(" , ");
+console.log(string);
+
+const listingpro = [
+  { name: "Washing Machine" },
+  { name: "Refrigerator" },
+  { name: "Oven" },
+  { name: "Dishwasher" },
+];
+
+// const pname = listingpro.map((list) =>`${list.name} `)
+
+const paname = listingpro.map((list) => list.name).join(" ,");
+console.log(paname);
+
+const appointments = [
+  { doctor: "Dr. Roy", patient: "Anita" },
+  { doctor: "Dr. Roy", patient: "Sumit" },
+  { doctor: "Dr. Khan", patient: "Rita" },
+  { doctor: "Dr. Sen", patient: "Akash" },
+  { doctor: "Dr. Roy", patient: "Tina" },
+  { doctor: "Dr. Sen", patient: "jai" },
+  { doctor: "Dr. Roy", patient: "rohan" },
+];
+
+const treat = appointments.reduce((acc, appoint) => {
+  acc[appoint.doctor] = [...(acc[appoint.doctor] || []), appoint.patient];
+  return acc;
+}, {});
+console.log(treat)
